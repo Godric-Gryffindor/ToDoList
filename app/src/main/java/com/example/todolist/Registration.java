@@ -9,38 +9,39 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-
-    TextView textViewHome,textViewRegister;
+public class Registration extends AppCompatActivity {
+    TextView textViewSignIn;
     EditText editTextEmail,editTextPass;
-    Button buttonSignIn;
+    Button buttonRegister;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registeration);
 
-        textViewRegister=findViewById(R.id.textViewRegister);
+        textViewSignIn=findViewById(R.id.textViewLogin);
         editTextEmail=findViewById(R.id.editTextEmail);
         editTextPass=findViewById(R.id.editTextPassword);
-        buttonSignIn=findViewById(R.id.buttonLogin);
+        buttonRegister=findViewById(R.id.buttonRegister);
 
-        textViewRegister.setOnClickListener(new View.OnClickListener() {
+        textViewSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this,Registration.class);
+                Intent intent = new Intent(Registration.this,MainActivity.class)  ;
                 startActivity(intent);
                 finish();
             }
         });
 
-        buttonSignIn.setOnClickListener(new View.OnClickListener() {
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this, HomeScreen.class);
+                Intent intent= new Intent(Registration.this,HomeScreen.class);
                 startActivity(intent);
                 finish();
             }
         });
+
     }
-
 }
